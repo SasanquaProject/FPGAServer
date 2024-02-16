@@ -1,0 +1,23 @@
+[package]
+name = "fpga_server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.75"
+thiserror = "1.0.192"
+server_job = { path = "../server_job/job" }
+server_worker = { path= "../server_worker/worker" }
+
+[workspace]
+resolver = "2"
+members = [
+    "job/job",
+    "worker/worker",
+]
+
+[workspace.dependencies]
+anyhow = "1.0.75"
+thiserror = "1.0.50"
+serde = "1.0.192"
+
